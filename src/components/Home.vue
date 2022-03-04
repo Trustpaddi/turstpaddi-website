@@ -308,7 +308,7 @@ import Slider from "./Slider.vue";
       />
     </div>
   </section>
-  <section class="my-24 testimonials mx-auto w-9/12" data-aos="fade-down">
+  <section class="my-24 testimonials mx-auto lg:w-9/12" data-aos="fade-down">
     <div class="" >
       <Slider />
     </div>

@@ -4,7 +4,7 @@
       <div class="carousel__item bg-white rounded-3xl m-6 p-5 px-8">
         <div class="flex my-5">
           <img
-            :src="'../public/testimonials/' + slide.img"
+            :src="'/testimonials/' + slide.img"
             class="w-10 h-9"
             alt=""
           />
