@@ -77,8 +77,9 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.carousel__icon {
-  fill: black !important;
+.carousel__prev,
+.carousel__next {
+  color: black !important;
 }
 .carousel__item {
   box-shadow: 4px 4px 23px rgba(0, 0, 0, 0.06);
