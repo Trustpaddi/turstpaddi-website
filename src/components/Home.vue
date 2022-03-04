@@ -1,4 +1,5 @@
 <script setup>
+import Slider from "./Slider.vue"
 </script>
 
 <template>
@@ -304,8 +305,10 @@
       />
     </div>
   </section>
-  <section class="my-24 testimonials">
-    <div></div>
+  <section class="my-24 testimonials mx-auto w-9/12">
+    <div class="">
+      <Slider/>
+    </div>
   </section>
   <section>
     <div class="lg:w-8/12 p-8 rounded-3xl mx-auto safe">
