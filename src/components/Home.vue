@@ -415,19 +415,19 @@ export default {
     />
 
     <div class="lg:flex my-8">
-      <div class="m-5 text-white lg:w-1/2">
+      <div class="m-5 lg:my-0 my-10 text-white lg:w-1/2">
         <div class="text-dark-orange text-xs">INDIVIDUALS</div>
         <div class="text-xl text-white font-bold my-1">Peer 2 Peer</div>
-        <div class="my-3 text-sm">
+        <div class="my-3 lg:text-sm text-base">
           Anyone can use TrustPaddi especially when it comes to making
           transactions with unknown online vendors, service providers or with
           people whom you haven't done business with before.
         </div>
       </div>
-      <div class="m-5 text-white lg:w-1/2">
+      <div class="m-5 lg:my-0 my-10 text-white lg:w-1/2">
         <div class="text-dark-orange text-xs">BUSINESSES</div>
         <div class="text-xl text-white font-bold my-1">Sellers and Vendors</div>
-        <div class="my-3 text-sm">
+        <div class="my-3 lg:text-sm text-base">
           Any Business owner can use TrustPaddi, with our escrow services you
           can gain the Trust and Reliability that big brands enjoy, boost your
           sales, avoid the risk associated with cash on delivery (COD), attend
@@ -435,10 +435,10 @@ export default {
           get paid instantly without stories.
         </div>
       </div>
-      <div class="m-5 text-white lg:w-1/2">
+      <div class="m-5 lg:my-0 my-10 text-white lg:w-1/2">
         <div class="text-dark-orange text-xs">E-COMMERCE</div>
         <div class="text-xl text-white font-bold my-1">Online marketplaces</div>
-        <div class="my-3 text-sm">
+        <div class="my-3 lg:text-sm text-base">
           Any Business owner can use TrustPaddi, with our escrow services you
           can gain the Trust and Reliability that big brands enjoy, boost your
           sales, avoid the risk associated with cash on delivery (COD), attend
