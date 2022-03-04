@@ -1,5 +1,17 @@
-<script setup>
+<script >
 import Slider from "./Slider.vue";
+export default {
+  data() {
+    return {
+      buyer: true,
+    };
+  },
+  methods: {
+    toggleBuyer() {
+      this.buyer = !this.buyer;
+    },
+  },
+};
 </script>
 
 <template>
@@ -127,8 +139,24 @@ import Slider from "./Slider.vue";
     <p class="text-center text-xs text-gray">
       The whole process is Simple, transparent and automated
     </p>
+    <div class="text-center my-5">
+      <input
+        type="button"
+        value="BUYER"
+        class="p-3 px-10 font-bold text-blue rounded-3xl mx-5"
+        :class="buyer && 'bg-orange'"
+        @click="toggleBuyer"
+      />
+      <input
+        type="button"
+        value="SELLER"
+        class="p-3 px-10 font-bold text-blue rounded-3xl mx-5"
+        @click="toggleBuyer"
+        :class="buyer === false && 'bg-orange'"
+      />
+    </div>
     <div class="lg:flex mt-8 justify-between text-gray">
-      <div class="lg:w-1/2">
+      <div v-if="buyer" class="lg:w-1/2">
         <div class="flex my-8">
           <div
             class="
@@ -243,6 +271,123 @@ import Slider from "./Slider.vue";
           </div>
         </div>
       </div>
+      <div v-else class="lg:w-1/2">
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            1
+          </div>
+          <div class="text-sm ml-5">
+            Buyer and seller agree on the terms of the transaction; Eg Price,
+            duration, proposed delivery date etc.
+          </div>
+        </div>
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            2
+          </div>
+          <div class="text-sm ml-5">
+            Seller Initiates (Begins) the escrow; either parties can creates an
+            escrow transaction.
+          </div>
+        </div>
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            3
+          </div>
+          <div class="text-sm ml-5">
+            Buyer accepts the transaction & pays to TrustPaddi; TrustPaddi holds
+            on to the payment.
+          </div>
+        </div>
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            4
+          </div>
+          <div class="text-sm ml-5">
+            Merchandise is shipped to the buyer; Seller ships the merchandise or
+            we can help retrieve the merchandise from you (The Seller) & deliver
+            it to the buyer.
+          </div>
+        </div>
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            5
+          </div>
+          <div class="text-sm ml-5">
+            Buyer confirms the merchandise ; He/she verifies the product to see
+            if its exactly what he ordered.
+          </div>
+        </div>
+        <div class="flex my-8">
+          <div
+            class="
+              rounded-3xl
+              px-4
+              py-2
+              border-2 border-dark-orange
+              text-dark-orange
+              bg-orange
+              h-11
+            "
+          >
+            6
+          </div>
+          <div class="text-sm ml-5">
+            TrustPaddi Pays the Seller after successful transaction
+            confirmation.
+          </div>
+        </div>
+      </div>
       <div class="relative">
         <img
           class="lg:w-3/4 lg:ml-auto lg:mt-16 -0"
@@ -309,7 +454,7 @@ import Slider from "./Slider.vue";
     </div>
   </section>
   <section class="my-24 testimonials mx-auto lg:w-9/12" data-aos="fade-down">
-    <div class="" >
+    <div class="">
       <Slider />
     </div>
   </section>
