@@ -41,7 +41,9 @@ export default {
       </div>
     </div>
     <div class="absolute top-5 right-5 lg:hidden block">
-      <button @click="nav = !nav">click</button>
+      <button @click="nav = !nav">
+        <img src="../assets/icons/bar.png">
+      </button>
     </div>
   </div>
 </template>

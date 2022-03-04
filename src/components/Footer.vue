@@ -2,8 +2,13 @@
 </script>
 
 <template>
-  <section>
-    <div class="lg:flex lg:px-32 px-8 justify-between bg-dark-blue mt-16 py-8 text-white">
+  <section class="relative bg-dark-blue">
+    <div class="lg:flex lg:px-32 px-8 justify-between mt-16 py-8 text-white">
+      <img
+        src="../assets/mocups/footer-top.png"
+        class="absolute top-0 left-0"
+        alt=""
+      />
       <div class="text-sm my-8">
         <div class="text-base font-bold my-4">Company</div>
         <div class="my-5">Testimonials</div>
@@ -64,6 +69,11 @@
           </div>
         </div>
       </div>
+      <img
+        src="../assets/mocups/footer-bottom.png"
+        class="absolute bottom-0 right-0"
+        alt=""
+      />
     </div>
     <div
       class="

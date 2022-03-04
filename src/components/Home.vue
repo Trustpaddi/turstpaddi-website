@@ -4,17 +4,30 @@
 <template>
   <section class="lg:mx-32 mx-8 lg:flex justify-evenly mt-20">
     <div class="lg:text-left text-center">
-      <div class="lg:text-5xl text-4xl lg:w-3/4 lg:leading-relaxed font-bold text-blue">
+      <div
+        class="
+          lg:text-5xl
+          text-4xl
+          lg:w-3/4 lg:leading-relaxed
+          font-bold
+          text-blue
+        "
+      >
         Safer Transactions Happy People
       </div>
       <p class="text-sm lg:w-4/5 my-8">
         Transact Securely with online vendors & marketplaces, gain customers
         trust with TrustPaddi
       </p>
+      <img
+        src="../assets/mocups/pointer.png"
+        class="absolute w-20 top-96 lg:left-80 right-5"
+        alt=""
+      />
       <input
         type="button"
         value="Get Started"
-        class="px-10 bg-blue p-3 rounded-3xl text-white text-sm"
+        class="px-10 bg-blue mt-16 p-3 rounded-3xl text-white text-sm"
       />
     </div>
     <div class="lg:w-3/5 lg:my-0 my-8">
@@ -22,6 +35,7 @@
     </div>
   </section>
   <section class="my-20 lg:mx-32 mx-8">
+    <img src="../assets/mocups/bard.png" class="absolute w-32 left-0" alt="" />
     <div class="text-3xl font-bold text-dark-orange text-center mb-5">
       The Problem
     </div>
@@ -225,15 +239,30 @@
           </div>
         </div>
       </div>
-      <div>
-        <img class="lg:w-3/4 lg:ml-auto lg:mt-16" src="../assets/shopping.png" alt="" />
+      <div class="relative">
+        <img
+          class="lg:w-3/4 lg:ml-auto lg:mt-16 -0"
+          src="../assets/shopping.png"
+          alt=""
+        />
       </div>
     </div>
   </section>
-  <section class="bg-blue lg:px-32 py-12">
+  <section class="bg-who lg:px-32 py-20 relative">
     <div class="text-3xl text-bold text-center text-white my-3">
       Who can use Trustpaddi
     </div>
+    <img
+      src="../assets/mocups/who-top.png"
+      class="absolute top-0 left-0"
+      alt=""
+    />
+    <img
+      src="../assets/mocups/footer-bottom.png"
+      class="absolute bottom-0 right-0"
+      alt=""
+    />
+
     <div class="lg:flex my-8">
       <div class="m-5 text-white lg:w-1/2">
         <div class="text-dark-orange text-xs">INDIVIDUALS</div>
@@ -275,7 +304,9 @@
       />
     </div>
   </section>
-  <section class="my-24"></section>
+  <section class="my-24 testimonials">
+    <div></div>
+  </section>
   <section>
     <div class="lg:w-8/12 p-8 rounded-3xl mx-auto safe">
       <div class="text-3xl font-bold text-center my-5 text-blue">
@@ -315,5 +346,8 @@
     rgba(250, 214, 158, 0.2) 63.34%,
     rgba(250, 214, 158, 0.3) 79.39%
   );
+}
+.testimonials {
+  background: url("../assets/map.png");
 }
 </style>
