@@ -1,16 +1,18 @@
 <script >
+import Slides from "./Slider.vue";
 import Slider from "./Slider.vue";
 export default {
-  data() {
-    return {
-      buyer: true,
-    };
-  },
-  methods: {
-    toggleBuyer() {
-      this.buyer = !this.buyer;
+    data() {
+        return {
+            buyer: true,
+        };
     },
-  },
+    methods: {
+        toggleBuyer() {
+            this.buyer = !this.buyer;
+        },
+    },
+    components: { Slider }
 };
 </script>
 
@@ -55,7 +57,7 @@ export default {
     <div class="text-3xl font-bold text-dark-orange text-center mb-5">
       The Problem
     </div>
-    <div class="lg:flex justify-between mt-20" data-aos="fade-up">
+    <div class="lg:flex justify-between mt-20">
       <div class="my-auto">
         <div class="flex my-5">
           <img
@@ -91,7 +93,7 @@ export default {
       </div>
     </div>
   </section>
-  <section class="py-20 lg:px-28 linear" data-aos="fade-down">
+  <section class="py-20 lg:px-28 linear">
     <div class="text-3xl font-bold text-center mt-5 text-blue">
       Introducing Trustpaddi
     </div>
@@ -132,7 +134,7 @@ export default {
       <img src="../assets/celebration.png" alt="" />
     </div>
   </section>
-  <section class="lg:px-28 px-5 py-8 works" data-aos="fade-up">
+  <section class="lg:px-28 px-5 py-8 works">
     <div class="text-3xl font-bold text-center mt-5 text-blue">
       How it Works
     </div>
@@ -397,7 +399,7 @@ export default {
       </div>
     </div>
   </section>
-  <section class="bg-who lg:px-32 py-20 relative" data-aos="fade-down">
+  <section class="bg-who lg:px-32 py-20 relative">
     <div class="text-3xl text-bold text-center text-white my-3">
       Who can use Trustpaddi
     </div>
@@ -453,13 +455,11 @@ export default {
       />
     </div>
   </section>
-  <section class="my-24 testimonials mx-auto lg:w-9/12" data-aos="fade-down">
-    <div class="">
-      <Slider />
-    </div>
+  <section class="my-24 testimonials mx-auto lg:w-9/12">
+    <Slider />
   </section>
   <section>
-    <div class="lg:w-8/12 p-8 rounded-3xl mx-auto safe" data-aos="flip-up">
+    <div class="lg:w-8/12 p-8 rounded-3xl mx-auto safe">
       <div class="text-3xl font-bold text-center my-5 text-blue">
         Better safe than sorry
       </div>

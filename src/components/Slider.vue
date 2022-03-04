@@ -1,34 +1,7 @@
-<template>
-  <Carousel :settings="settings" :breakpoints="breakpoints" :autoplay="2000">
-    <Slide v-for="slide in slides" :key="slide">
-      <div class="carousel__item bg-white rounded-3xl m-6 p-5 px-8">
-        <div class="flex my-5">
-          <img
-            :src="'/testimonials/' + slide.img"
-            class="w-10 h-9"
-            alt=""
-          />
-          <div class="px-4 pt-1 text-blue font-bold">{{ slide.name }}</div>
-        </div>
-        <div class="text-sm text-left text-gray">
-          {{ slide.desc }}
-        </div>
-      </div>
-    </Slide>
-    <template #addons>
-      <Navigation />
-      <Pagination />
-    </template>
-  </Carousel>
-</template>
-
 <script>
-import { defineComponent } from "vue";
 import { Carousel, Navigation, Slide, Pagination } from "vue3-carousel";
-
 import "vue3-carousel/dist/carousel.css";
-
-export default defineComponent({
+export default {
   name: "Breakpoints",
   components: {
     Carousel,
@@ -59,8 +32,6 @@ export default defineComponent({
       itemsToShow: 1,
       snapAlign: "center",
     },
-    // breakpoints are mobile first
-    // any settings not specified will fallback to the carousel settings
     breakpoints: {
       // 700px and up
       700: {
@@ -74,8 +45,29 @@ export default defineComponent({
       },
     },
   }),
-});
+};
 </script>
+
+<template>
+  <Carousel :settings="settings" :breakpoints="breakpoints" :autoplay="2000">
+    <Slide v-for="slide in slides" :key="slide">
+      <div class="carousel__item bg-white rounded-3xl m-6 p-5 px-8">
+        <div class="flex my-5">
+          <img :src="'/testimonials/' + slide.img" class="w-10 h-9" alt="" />
+          <div class="px-4 pt-1 text-blue font-bold">{{ slide.name }}</div>
+        </div>
+        <div class="text-sm text-left text-gray">
+          {{ slide.desc }}
+        </div>
+      </div>
+    </Slide>
+    <template #addons>
+      <Navigation />
+      <Pagination />
+    </template>
+  </Carousel>
+</template>
+
 <style scoped>
 .carousel__prev,
 .carousel__next {
