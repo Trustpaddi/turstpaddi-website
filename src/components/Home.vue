@@ -2,23 +2,23 @@
 import Slides from "./Slider.vue";
 import Slider from "./Slider.vue";
 export default {
-    data() {
-        return {
-            buyer: true,
-        };
+  data() {
+    return {
+      buyer: true,
+    };
+  },
+  methods: {
+    toggleBuyer() {
+      this.buyer = !this.buyer;
     },
-    methods: {
-        toggleBuyer() {
-            this.buyer = !this.buyer;
-        },
-    },
-    components: { Slider }
+  },
+  components: { Slider },
 };
 </script>
 
 <template>
   <section
-    class="lg:mx-32 mx-8 lg:flex justify-evenly mt-20"
+    class="lg:mx-32 mx-8 lg:flex justify-evenly mt-32"
     data-aos="fade-down"
   >
     <div class="lg:text-left text-center">
@@ -37,16 +37,18 @@ export default {
         Transact Securely with online vendors & marketplaces, gain customers
         trust with TrustPaddi
       </p>
-      <img
-        src="../assets/mocups/pointer.png"
-        class="absolute w-20 top-96 lg:left-80 right-5"
-        alt=""
-      />
-      <input
-        type="button"
-        value="Get Started"
-        class="px-10 bg-blue mt-16 p-3 rounded-3xl text-white text-sm"
-      />
+      <div class="relative">
+        <img
+          src="../assets/mocups/pointer.png"
+          class="absolute lg:w-20 lg:left-44 w-16 right-0"
+          alt=""
+        />
+        <input
+          type="button"
+          value="Get Started"
+          class="px-10 bg-blue mt-16 p-3 rounded-3xl text-white text-sm"
+        />
+      </div>
     </div>
     <div class="lg:w-3/5 lg:my-0 my-8">
       <img class="w-screen" src="../assets/man-with-phone.png" alt="" />

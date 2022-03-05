@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <div class="mobile justify-between">
+  <div class="mobile justify-between fixed top-0 w-full bg-white z-10">
     <div class="lg:flex p-3 justify-between lg:px-32 px-4">
       <div class="lg:flex justify-between">
         <img class="w-10 h-10" src="../assets/logo.png" alt="" />
