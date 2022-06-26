@@ -17,8 +17,8 @@ export const useWaitlistStore = defineStore({
             this.dialog = !this.dialog
         },
 
-        sendNewWait() {
-            if (this.$state.email != '') {
+        sendNewWait () {
+            if (this.email != '') {
                 this.loading = true
                 axios({
                     method: 'post',
@@ -26,21 +26,21 @@ export const useWaitlistStore = defineStore({
                 }).then(res => {
                     console.log(res.data)
                     if (res.status == 201) {
-                        this.$state.loading = false
-                        this.$state.text = res.body.message
-                        this.$state.snack = true
+                        this.loading = false
+                        this.snack = true
+                        this.text = res.body.message
                     } else if (res.status == 400) {
-                        this.$state.loading = false
-                        this.$state.text = res.body.message
-                        this.$state.snack = true
+                        this.loading = false
+                        this.snack = true
+                        this.text = res.body.message
                     }
-                    this.$state.loading = false
+                    this.loading = false
                 }).catch(() => {
-                    this.$state.text = 'You are already on our watch list'
-                    this.$state.loading = false
-                    this.$state.snack = true
+                    this.snack = true
+                    this.text = 'You are already on our watch list'
+                    this.loading = false
                 })
-            }
+            } else console.log('empty')
         }
     }
 })

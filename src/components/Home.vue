@@ -1,28 +1,31 @@
-<script>
-import { mapState, mapActions } from 'pinia'
+<script setup>
 import Slider from "./Slider.vue"
-
 import { useWaitlistStore } from '../store/waitlist'
 
-export default {
-  data () {
-    return {
-      buyer: true,
-    };
-  },
-  methods: {
-    ...mapActions(useWaitlistStore, ["sendNewWait"]),
+const buyer = true
 
-    toggleBuyer () {
-      this.buyer = !this.buyer;
-    },
-  },
-  components: { Slider },
+const waitlist = useWaitlistStore()
 
-  computed: {
-    ...mapState(useWaitlistStore, ["email", "loading", "snack", "text"])
-  }
-};
+
+// export default {
+//   data () {
+//     return {
+//       buyer: true,
+//     };
+//   },
+//   methods: {
+//     ...mapActions(useWaitlistStore, ["sendNewWait"]),
+
+//     toggleBuyer () {
+//       this.buyer = !this.buyer;
+//     },
+//   },
+//   components: { Slider },
+
+//   computed: {
+//     ...mapState(useWaitlistStore, ["email", "loading", "snack", "text"])
+//   }
+// };
 </script>
 
 
@@ -49,19 +52,19 @@ export default {
         <div class="flex flex-1 rounded-md shadow-sm mr-2">
           <input
             type="text"
-            v-model="email"
-            @keypress.enter="sendNewWait"
+            v-model="waitlist.email"
+            @keypress.enter="waitlist.sendNewWait"
             class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
             placeholder="Enter your email"
           />
         </div>
         <button
-          @click="sendNewWait"
+          @click="waitlist.sendNewWait"
           class="p-2 rounded-lg bg-blue"
           style="color: #fff"
-        >{{ loading == true ? 'Loading...' : 'Notify Me' }}</button>
+        >{{ waitlist.loading == true ? 'Loading...' : 'Notify Me' }}</button>
       </div>
-      <p v-if="snack" class="font-bold text-sm" style="color: green">{{ text }}</p>
+      <p v-show="waitlist.snack" class="font-bold text-sm" style="color: green">{{ text }}</p>
     </div>
     <div class="lg:w-3/5 lg:my-0 my-8">
       <img
