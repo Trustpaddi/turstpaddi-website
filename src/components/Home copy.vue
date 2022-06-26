@@ -1,30 +1,20 @@
-<script>
-import { mapState, mapActions } from 'pinia'
-import Slider from "./Slider.vue"
-
-import { useWaitlistStore } from '../store/waitlist'
-
+<script >
+import Slides from "./Slider.vue";
+import Slider from "./Slider.vue";
 export default {
-  data () {
+  data() {
     return {
       buyer: true,
     };
   },
   methods: {
-    ...mapActions(useWaitlistStore, ["sendNewWait"]),
-
-    toggleBuyer () {
+    toggleBuyer() {
       this.buyer = !this.buyer;
     },
   },
   components: { Slider },
-
-  computed: {
-    ...mapState(useWaitlistStore, ["email", "loading", "snack", "text"])
-  }
 };
 </script>
-
 
 <template>
   <section
@@ -32,51 +22,40 @@ export default {
     data-aos="fade-down"
   >
     <div class="lg:text-left text-center">
-      <div class="
+      <div
+        class="
+          lg:text-5xl
+          text-4xl
           lg:w-3/4 lg:leading-relaxed
           font-bold
           text-blue
-        ">
-        <p>coming soon 🚀🚀🚀</p>
-        <p class="lg:text-4xl text-4xl mt-5">Get Notified</p>
-        <p class="lg:text-4xl text-4gl">When we Launch🚀</p>
+        "
+      >
+        Safer Transactions Happy People
       </div>
       <p class="text-sm lg:w-4/5 my-8">
         Transact Securely with online vendors & marketplaces, gain customers
         trust with TrustPaddi
       </p>
-      <div class="flex justify-between items-center">
-        <div class="flex flex-1 rounded-md shadow-sm mr-2">
-          <input
-            type="text"
-            v-model="email"
-            @keypress.enter="sendNewWait"
-            class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
-            placeholder="Enter your email"
-          />
-        </div>
-        <button
-          @click="sendNewWait"
-          class="p-2 rounded-lg bg-blue"
-          style="color: #fff"
-        >{{ loading == true ? 'Loading...' : 'Notify Me' }}</button>
+      <div class="relative">
+        <img
+          src="../assets/mocups/pointer.png"
+          class="absolute lg:w-20 lg:left-44 w-16 right-0"
+          alt=""
+        />
+        <input
+          type="button"
+          value="Get Started"
+          class="px-10 bg-blue mt-16 p-3 rounded-3xl text-white text-sm"
+        />
       </div>
-      <p v-if="snack" class="font-bold text-sm" style="color: green">{{ text }}</p>
     </div>
     <div class="lg:w-3/5 lg:my-0 my-8">
-      <img
-        class="w-screen"
-        src="../assets/man-with-phone.png"
-        alt=""
-      />
+      <img class="w-screen" src="../assets/man-with-phone.png" alt="" />
     </div>
   </section>
   <section class="my-20 lg:mx-32 mx-8">
-    <img
-      src="../assets/mocups/bard.png"
-      class="absolute w-32 left-0"
-      alt=""
-    />
+    <img src="../assets/mocups/bard.png" class="absolute w-32 left-0" alt="" />
     <div class="text-3xl font-bold text-dark-orange text-center mb-5">
       The Problem
     </div>
@@ -97,11 +76,7 @@ export default {
           <div class="text-sm w-80 p-2">
             There have been an alarming Rate of online scams
           </div>
-          <img
-            class="w-16 h-16"
-            src="../assets/emoji/MaleMemojis.png"
-            alt=""
-          />
+          <img class="w-16 h-16" src="../assets/emoji/MaleMemojis.png" alt="" />
         </div>
         <div class="flex my-5">
           <img
@@ -116,11 +91,7 @@ export default {
         </div>
       </div>
       <div class="">
-        <img
-          class="lg:w-96"
-          src="../assets/woman-with-phone.png"
-          alt=""
-        />
+        <img class="lg:w-96" src="../assets/woman-with-phone.png" alt="" />
       </div>
     </div>
   </section>
@@ -133,10 +104,7 @@ export default {
     </p>
     <div class="lg:flex mt-16">
       <div class="w-80 m-8">
-        <img
-          src="../assets/icons/pay-dollar.png"
-          alt=""
-        />
+        <img src="../assets/icons/pay-dollar.png" alt="" />
         <div class="text-lg font-bold my-3 text-blue">Escrow Payment</div>
         <div class="text-gray">
           We offer an escrow payment platform that bridge the trust issues
@@ -144,10 +112,7 @@ export default {
         </div>
       </div>
       <div class="w-80 m-8">
-        <img
-          src="../assets/icons/dashboard.png"
-          alt=""
-        />
+        <img src="../assets/icons/dashboard.png" alt="" />
         <div class="text-lg font-bold my-3 text-blue">
           Order Management System
         </div>
@@ -158,10 +123,7 @@ export default {
         </div>
       </div>
       <div class="w-80 m-8">
-        <img
-          src="../assets/icons/pay-dollar.png"
-          alt=""
-        />
+        <img src="../assets/icons/pay-dollar.png" alt="" />
         <div class="text-lg font-bold my-3 text-blue">No Cash Risk</div>
         <div class="text-gray">
           An easier solution for sellers to make sales to prospective buyers
@@ -171,10 +133,7 @@ export default {
       </div>
     </div>
     <div class="mx-auto lg:w-2/5 w-3/5 mt-10">
-      <img
-        src="../assets/celebration.png"
-        alt=""
-      />
+      <img src="../assets/celebration.png" alt="" />
     </div>
   </section>
   <section class="lg:px-28 px-5 py-8 works">
@@ -201,12 +160,10 @@ export default {
       />
     </div>
     <div class="lg:flex mt-8 justify-between text-gray">
-      <div
-        v-if="buyer"
-        class="lg:w-1/2"
-      >
+      <div v-if="buyer" class="lg:w-1/2">
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -214,7 +171,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             1
           </div>
           <div class="text-sm ml-5">
@@ -223,7 +181,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -231,7 +190,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             2
           </div>
           <div class="text-sm ml-5">
@@ -240,7 +200,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -248,7 +209,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             3
           </div>
           <div class="text-sm ml-5">
@@ -256,7 +218,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -264,7 +227,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             4
           </div>
           <div class="text-sm ml-5">
@@ -273,7 +237,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -281,7 +246,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             5
           </div>
           <div class="text-sm ml-5">
@@ -290,7 +256,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -298,7 +265,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             6
           </div>
           <div class="text-sm ml-5">
@@ -307,12 +275,10 @@ export default {
           </div>
         </div>
       </div>
-      <div
-        v-else
-        class="lg:w-1/2"
-      >
+      <div v-else class="lg:w-1/2">
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -320,7 +286,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             1
           </div>
           <div class="text-sm ml-5">
@@ -329,7 +296,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -337,7 +305,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             2
           </div>
           <div class="text-sm ml-5">
@@ -346,7 +315,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -354,7 +324,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             3
           </div>
           <div class="text-sm ml-5">
@@ -363,7 +334,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -371,7 +343,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             4
           </div>
           <div class="text-sm ml-5">
@@ -381,7 +354,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -389,7 +363,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             5
           </div>
           <div class="text-sm ml-5">
@@ -398,7 +373,8 @@ export default {
           </div>
         </div>
         <div class="flex my-8">
-          <div class="
+          <div
+            class="
               rounded-3xl
               px-4
               py-2
@@ -406,7 +382,8 @@ export default {
               text-dark-orange
               bg-orange
               h-11
-            ">
+            "
+          >
             6
           </div>
           <div class="text-sm ml-5">
